@@ -101,6 +101,7 @@ class _AddProductsState extends State<AddProducts> {
                                             builder: (context) =>
                                                 const SelectBrands()));
                                     brandVal = data['name'];
+                                    setState(() {});
                                   },
                                   child: Align(
                                     alignment: Alignment.centerLeft,
@@ -108,8 +109,11 @@ class _AddProductsState extends State<AddProducts> {
                                       brandVal != null
                                           ? brandVal!
                                           : "--Select--",
-                                      style: const TextStyle(
-                                          fontSize: 17, color: Colors.black54),
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          color: brandVal != null
+                                              ? Colors.black
+                                              : Colors.black54),
                                     ),
                                   )),
                             )),
